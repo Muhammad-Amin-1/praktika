@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+
+h1 {
+	font-size: clamp(24px, 5vw, 60px);
+	/* гипкий заголовок */
+} 
+
+ul {
+	list-style: none;
+}
+
+ul,
+li,
+p,
+h2,
+img,
+div {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Rubik", sans-serif;
+	font-weight: 500;
+	line-height: 1.2;
+	background-color: var(--bac-color-black);
+	/* color: var(--bac-color-white); */
+}
+
+:root {
+	--container-max-width: 760px;
+	--container-padding-x: 10px;
+
+	--bac-color-white: #FFFFFF;
+	--bac-color-gray: #808080;
+	--bac-color-red: #941B0C;
+	--bac-color-black: #000000;
+
+	--padding-card: 10px 30px 60px;
+}
+
+.container {
+	max-width: calc(var(--container-max-width) + var(--container-padding-x) * 2);
+	margin-inline: auto;
+	padding-inline: var(--container-padding-x);
+}
+
+/* --------- */
+
+.card {
+	padding-top: 50px;
+}
+
+.card__inner {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.card__tovar {
+	background-image: url(../img/bg.png);
+	padding: var(--padding-card);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+}
+
+.card__tovar-yellow {
+	background-image: url(../img/bg\ —\ копия.png);
+} 
+
+.card__tovar-title {
+	font-size: 24px;
+	margin-bottom: 15px;
+}
+
+.card__tovar-text {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--bac-color-gray);
+	padding-bottom: 22px;
+}
+
+.card__tovar-item .card__tovar-check {
+	text-align: right;
+	padding-right: 30px;
+	font-size: 43px;
+	color: var(--bac-color-red);
+}
+
+.card__tovar-item .card__tovar-chec-mini {
+	font-size: 18px;
+	color: #808080;
+	text-decoration: line-through;
+}
+
+.ttt {
+	background-image: url(../img/sale\ label.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.card__tovar-yellow::before {
+	content: '10%';
+	position: absolute;
+	width: 60px;
+	height: 30px;
+    top: 6px;
+    left: 0;
+    transform: rotate(-41deg);
+	font-size: 24px;
+	font-weight: 500;
+	color: var(--bac-color-white);
+	z-index: 1;
+}
+
+.card__tovar-yellow::after {
+	content: url(../img/label.svg);
+	position: absolute;
+	width: 60px;
+	height: 30px;
+    top: -18px;
+    left: -19px;
+    transform: rotate(4deg);
+	font-size: 24px;
+	font-weight: 500;
+	color: var(--bac-color-white);
+}
+
+.card__inner::after {
+	content: url(../img/basket.svg);
+	position: absolute;
+	width: 45px;
+	height: 30px;
+    left: 33px;
+    bottom: 47px;
+}
+
+.card__inner::before {
+	content: url(../img/basket.svg);
+	position: absolute;
+	width: 45px;
+	height: 30px;
+    bottom: 48px;
+    right: 300px;
+}
